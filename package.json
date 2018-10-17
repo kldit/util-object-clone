@@ -1,0 +1,23 @@
+{
+  "name": "@kldit/util-object-clone",
+  "version": "1.0.0",
+  "description": "Clone a data object",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kldit/util-object-clone.git"
+  },
+  "author": "Orlando Leite <orlando@webdefault.com.br>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kldit/util-object-clone/issues"
+  },
+  "homepage": "https://github.com/kldit/util-object-clone#readme",
+  "keywords": [
+    "Object",
+    "clone"
+  ]
+}
