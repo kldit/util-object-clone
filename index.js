@@ -1,42 +1,45 @@
 /**
  * https://stackoverflow.com/a/728694/539623
  */
-Object.clone = function (obj)
+if(!Object.clone)
 {
-    var copy;
-
-    // Handle the 3 simple types, and null or undefined
-    if(null == obj || "object" != typeof obj) return obj;
-
-    // Handle Date
-    if(obj instanceof Date)
+    Object.clone = function (obj)
     {
-        copy = new Date();
-        copy.setTime(obj.getTime());
-        return copy;
-    }
+        var copy;
 
-    // Handle Array
-    if(obj instanceof Array)
-    {
-        copy = [];
-        for(var i = 0, len = obj.length; i < len; i++)
+        // Handle the 3 simple types, and null or undefined
+        if(null == obj || "object" != typeof obj) return obj;
+
+        // Handle Date
+        if(obj instanceof Date)
         {
-            copy[i] = this.clone(obj[i]);
+            copy = new Date();
+            copy.setTime(obj.getTime());
+            return copy;
         }
-        return copy;
-    }
 
-    // Handle Object
-    if(obj instanceof Object)
-    {
-        copy = {};
-        for(var attr in obj)
+        // Handle Array
+        if(obj instanceof Array)
         {
-            if(obj.hasOwnProperty(attr)) copy[attr] = this.clone(obj[attr]);
+            copy = [];
+            for(var i = 0, len = obj.length; i < len; i++)
+            {
+                copy[i] = this.clone(obj[i]);
+            }
+            return copy;
         }
-        return copy;
-    }
 
-    throw new Error("Unable to copy obj! Its type isn't supported.");
-};
+        // Handle Object
+        if(obj instanceof Object)
+        {
+            copy = {};
+            for(var attr in obj)
+            {
+                if(obj.hasOwnProperty(attr)) copy[attr] = this.clone(obj[attr]);
+            }
+            return copy;
+        }
+
+        throw new Error("Unable to copy obj! Its type isn't supported.");
+    };
+}

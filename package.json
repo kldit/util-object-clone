@@ -1,6 +1,6 @@
 {
   "name": "@kldit/util-object-clone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clone a data object",
   "main": "index.js",
   "scripts": {
